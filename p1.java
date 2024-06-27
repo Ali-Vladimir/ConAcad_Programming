@@ -7,8 +7,8 @@ public class p1 {
     }
 }
 class Sum {
-    int m_sum(int p_number1, int p_number2) {
-        p_number1+=p_number2;
-        return p_number1;
+    int m_sum(int p_numero, int p_number2) {
+        p_numero+=p_number2;
+        return p_numero;
     }
 }
