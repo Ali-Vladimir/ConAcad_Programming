@@ -46,33 +46,31 @@ If you haven't noticed yet, when you're working on programs, there are different
 
 To create a program that collects this information, all we need to do is create a simple program that reads input from the console or any convenient source, and continues reading in a loop while appending this information to a string variable. This will eventually cause an error, and when it does, we can use a try-catch block to catch the exception and print everything that has been collected so far. Voila! We will then have the test cases that the judge is using in our program, giving us a better understanding of what we're doing wrong.
 
-\```import java.util.Scanner;
+```java
+import java.util.Scanner;
+
 public class Recolectadora {
     public static void main(String[] args) {
-        Recolectora objeto=new Recolectora();
+        Recolectora objeto = new Recolectora();
         objeto.m_acepDatos();
     }
 }
-class Recolectora{
+
+class Recolectora {
     Scanner a_teclado;
-    String a_informacion="";
-    Recolectora(){a_teclado=new Scanner(System.in);}
-    void m_acepDatos(){
-         try{
-             while(true){a_informacion=a_informacion+"\n"+a_teclado.nextLine();}
-         }catch (Exception e){System.out.println(a_informacion);}
+    String a_informacion = "";
+
+    Recolectora() {
+        a_teclado = new Scanner(System.in);
+    }
+
+    void m_acepDatos() {
+        try {
+            while (true) {
+                a_informacion = a_informacion + "\n" + a_teclado.nextLine();
+            }
+        } catch (Exception e) {
+            System.out.println(a_informacion);
+        }
     }
 }
-\```
-
-Claro, aquí tienes un ejemplo de cómo usar un bloque de código con triple tilde en Markdown:
-
-\```java
-public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hola, mundo!");
-    }
-}
-\```
-
-En el bloque de código anterior, `java` especifica el lenguaje de programación para resaltar la sintaxis adecuadamente. Cuando uses esto en tu `README.md` en GitHub, se mostrará con el formato adecuado para facilitar la lectura y comprensión del código a los usuarios.
