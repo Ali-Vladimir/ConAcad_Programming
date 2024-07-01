@@ -1,4 +1,4 @@
-public class BubbleSort {
+public class BubbleSortM {
     public static void main(String[] args) throws Exception {
         bubblesort objeto=new bubblesort();
         int[] array = {64, 34, 25, 12, 22, 11, 90};
