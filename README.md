@@ -48,22 +48,18 @@ To create a program that collects this information, all we need to do is create 
 
 ```java
 import java.util.Scanner;
-
 public class Recolectadora {
     public static void main(String[] args) {
         Recolectora objeto = new Recolectora();
         objeto.m_acepDatos();
     }
 }
-
 class Recolectora {
     Scanner a_teclado;
     String a_informacion = "";
-
     Recolectora() {
         a_teclado = new Scanner(System.in);
     }
-
     void m_acepDatos() {
         try {
             while (true) {
