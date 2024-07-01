@@ -46,7 +46,7 @@ If you haven't noticed yet, when you're working on programs, there are different
 
 To create a program that collects this information, all we need to do is create a simple program that reads input from the console or any convenient source, and continues reading in a loop while appending this information to a string variable. This will eventually cause an error, and when it does, we can use a try-catch block to catch the exception and print everything that has been collected so far. Voila! We will then have the test cases that the judge is using in our program, giving us a better understanding of what we're doing wrong.
 
-'''import java.util.Scanner;
+\```import java.util.Scanner;
 public class Recolectadora {
     public static void main(String[] args) {
         Recolectora objeto=new Recolectora();
@@ -62,4 +62,5 @@ class Recolectora{
              while(true){a_informacion=a_informacion+"\n"+a_teclado.nextLine();}
          }catch (Exception e){System.out.println(a_informacion);}
     }
-}'''
+}
+\```
