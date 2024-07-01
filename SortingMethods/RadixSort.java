@@ -1,6 +1,5 @@
 import java.util.*;
-
-public class RadixSort {
+public class RadixSortM {
     public static void main(String[] args) throws Exception {
         Radixsort object = new Radixsort();
         int[] array = {170, 45, 75, 90, 802, 24, 2, 66};
@@ -44,7 +43,6 @@ class Radixsort {
         }
         for (int i = 0; i < n; i++) {
             array[i] = output[i];
-            
         }
     }
 }
