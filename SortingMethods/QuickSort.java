@@ -1,4 +1,4 @@
-public class QuickSort {
+public class QuickSortM {
     public static void main(String[] args) throws Exception {
         Quicksort object = new Quicksort();
         int[] array = {64, 34, 25, 12, 22, 11, 90};
