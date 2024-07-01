@@ -37,3 +37,29 @@ Now, I'll tell you how you can lower the similarity percentage. If you understoo
 
 To conclude this first point, I want to clarify a few things. First, something that's useless to do is to modify the code at the ordering level. Let me explain: if you wrote `(method1, method2, method3)` and you think that changing the order to `(method3, method2, method1)` will lower the percentage, it won't for a simple reason: the judge doesn't have eyes and can't see that the code looks different just because it's reversed or something like that. Another important point to emphasize is that you shouldn't actually place too much importance on the similarity percentage. It's very annoying not to get all the points, but if you did everything legally in the end, you'll get all the points regardless of the percentage. Finally, I'll clarify one point. It seems obvious at first glance, but I'll mention it anyway: if you're going to add garbage methods to your code, this will be evident when your code is reviewed. If it does get reviewed, the garbage methods will be there, and you might be questioned for using them.
 
+
+## How to create a program that fetches the answers
+
+Continuing with the tips, now I'll explain how you can create a simple program that you can integrate into specific programs to fetch and display the test cases for you.
+
+If you haven't noticed yet, when you're working on programs, there are different types in terms of how they provide feedback. Basically, there are 3 types: those that only indicate if the output is correct or incorrect, those that give a percentage of correct outputs, and finally those that show your own output. We'll focus on the latter type, where it's also possible for the program to show the correct answers alongside your incorrect output.
+
+To create a program that collects this information, all we need to do is create a simple program that reads input from the console or any convenient source, and continues reading in a loop while appending this information to a string variable. This will eventually cause an error, and when it does, we can use a try-catch block to catch the exception and print everything that has been collected so far. Voila! We will then have the test cases that the judge is using in our program, giving us a better understanding of what we're doing wrong.
+
+'''import java.util.Scanner;
+public class Recolectadora {
+    public static void main(String[] args) {
+        Recolectora objeto=new Recolectora();
+        objeto.m_acepDatos();
+    }
+}
+class Recolectora{
+    Scanner a_teclado;
+    String a_informacion="";
+    Recolectora(){a_teclado=new Scanner(System.in);}
+    void m_acepDatos(){
+         try{
+             while(true){a_informacion=a_informacion+"\n"+a_teclado.nextLine();}
+         }catch (Exception e){System.out.println(a_informacion);}
+    }
+}'''
