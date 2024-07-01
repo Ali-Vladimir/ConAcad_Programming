@@ -1,4 +1,4 @@
-public class InsertionSort {
+public class InsertionSortM {
     public static void main(String[] args) throws Exception {
         Insertionsort object = new Insertionsort();
         int[] array = {64, 34, 25, 12, 22, 11, 90};
