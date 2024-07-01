@@ -64,3 +64,15 @@ class Recolectora{
     }
 }
 \```
+
+Claro, aquí tienes un ejemplo de cómo usar un bloque de código con triple tilde en Markdown:
+
+\```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hola, mundo!");
+    }
+}
+\```
+
+En el bloque de código anterior, `java` especifica el lenguaje de programación para resaltar la sintaxis adecuadamente. Cuando uses esto en tu `README.md` en GitHub, se mostrará con el formato adecuado para facilitar la lectura y comprensión del código a los usuarios.
