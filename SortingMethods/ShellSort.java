@@ -1,4 +1,4 @@
-public class ShellSort {
+public class ShellSortM {
     public static void main(String[] args) throws Exception {
         Shellsort object = new Shellsort();
         int[] array = {64, 34, 25, 12, 22, 11, 90};
