@@ -1,48 +1,79 @@
-import java.util.*;
-public class RadixSortM {
-    public static void main(String[] args) throws Exception {
-        Radixsort object = new Radixsort();
+import java.util. Arrays;
+
+public class RadixSort {
+    public static void main(String[] args) {
+        RadixSortClass object = new RadixSortClass();
         int[] array = {170, 45, 75, 90, 802, 24, 2, 66};
-        object.radixSort(array);
-        System.out.println("Array ordenado: ");
-        for (int i : array) {
-            System.out.print(i + " ");
-        }
+        object.m_radixSort(array);
+        object.m_printArray(array);
     }
 }
-class Radixsort {
-    void radixSort(int[] array) {
-        int max = getMax(array);
-        for (int exp = 1; max / exp > 0; exp *= 10) {
-            countingSort(array, exp);
+
+class RadixSortClass {
+    
+    void m_radixSort(int[] p_array) {
+        int v_max, v_exp;
+        v_max = m_getMax(p_array);
+        v_exp = 1;
+        while (v_max / v_exp > 0) {
+            m_countingSort(p_array, v_exp);
+            v_exp *= 10;
         }
     }
-    int getMax(int[] array) {
-        int max = array[0];
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] > max) {
-                max = array[i];
+    
+    int m_getMax(int[] p_array) {
+        int v_max, v_i, v_length;
+        v_max = p_array[0];
+        v_i = 1;
+        v_length = p_array. length;
+        while (v_i < v_length) {
+            if (p_array[v_i] > v_max) {
+                v_max = p_array[v_i];
             }
+            v_i++;
         }
-        return max;
+        return v_max;
     }
-    void countingSort(int[] array, int exp) {
-        int n = array.length;
-        int[] output = new int[n];
-        int[] count = new int[10];
-        Arrays.fill(count, 0);
-        for (int i = 0; i < n; i++) {
-            count[(array[i] / exp) % 10]++;
+    
+    void m_countingSort(int[] p_array, int p_exp) {
+        int v_n, v_i, v_index;
+        v_n = p_array.length;
+        int[] v_output = new int[v_n];
+        int[] v_count = new int[10];
+        Arrays.fill(v_count, 0);
+        v_i = 0;
+        while (v_i < v_n) {
+            v_index = (p_array[v_i] / p_exp) % 10;
+            v_count[v_index]++;
+            v_i++;
         }
-        for (int i = 1; i < 10; i++) {
-            count[i] += count[i - 1];
+        v_i = 1;
+        while (v_i < 10) {
+            v_count[v_i] += v_count[v_i - 1];
+            v_i++;
         }
-        for (int i = n - 1; i >= 0; i--) {
-            output[count[(array[i] / exp) % 10] - 1] = array[i];
-            count[(array[i] / exp) % 10]--;
+        v_i = v_n - 1;
+        while (v_i >= 0) {
+            v_index = (p_array[v_i] / p_exp) % 10;
+            v_output[v_count[v_index] - 1] = p_array[v_i];
+            v_count[v_index]--;
+            v_i--;
         }
-        for (int i = 0; i < n; i++) {
-            array[i] = output[i];
+        v_i = 0;
+        while (v_i < v_n) {
+            p_array[v_i] = v_output[v_i];
+            v_i++;
         }
+    }
+    
+    void m_printArray(int[] p_array) {
+        int v_counter = 0, v_length;
+        v_length = p_array.length;
+        System. out.println("Array ordenado:");
+        while (v_counter < v_length) {
+            System.out.print(p_array[v_counter] + " ");
+            v_counter++;
+        }
+        System.out.println();
     }
 }
